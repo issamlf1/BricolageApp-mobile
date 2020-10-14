@@ -1,0 +1,87 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+    <button ion-button (click)="Deconnexion()" class="deconnexion" >
+      <ion-icon  slot="icon-only" name="log-out"></ion-icon>
+    </button>
+  </ion-navbar> 
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="formulaireForm" (ngSubmit)="send()"> 
+
+    <ion-item>
+      <ion-label  > Nom :</ion-label>
+      <ion-input value={{nom}} formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label > Prenom :</ion-label>
+      <ion-input value={{prenom}} formControlName="prenom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label > User name :</ion-label>
+      <ion-input value={{username}} formControlName="user_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label > Email :</ion-label>
+      <ion-input value={{email}} formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label > Mot de passe :</ion-label>
+      <ion-input value={{password}} formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label > Adresse :</ion-label>
+      <ion-input value={{adresse}} formControlName="address"></ion-input>
+    </ion-item>
+    <!-- <ion-list formControlName="typeUser" radio-group [(ngModel)]="valeur" >
+    <ion-item>
+      <ion-label>Client</ion-label>
+      <ion-radio checked={{client}} name="client" value="client" (ionSelect)=" changerUn()"></ion-radio>
+    </ion-item> -->
+    
+    
+    <!-- <ion-item>
+      <ion-label> Specialiste</ion-label>
+      <ion-radio checked={{specialiste}} name="specialiste" value="specialiste" (ionSelect)=" changer()"></ion-radio>
+    </ion-item>
+  </ion-list> -->
+  <ion-item>
+    <ion-label> Type compte</ion-label>
+    <ion-input value={{typecompte}} disabled="true" formControlName="typecompte"></ion-input>
+  </ion-item>
+  <ion-item  *ngIf="condition">
+    <ion-label> specialite</ion-label>
+    <ion-input value={{specialite}} disabled="true" formControlName="specialite"></ion-input>
+  </ion-item>
+
+
+
+    <!-- <ion-item *ngIf="visibilite">
+      <ion-label floating>Specialite</ion-label>
+
+      <ion-select formControlName="metie" [(ngModel)]="metier" >
+        <ion-option *ngIf="metie==Plomberie"  value="Plomberie">#Plomberie</ion-option>
+        <ion-option  *ngIf="metie==Menuiserie" value="Menuiserie">#Menuiserie</ion-option>
+        <ion-option *ngIf="metie==Electricien"	value="Electricien">#Electricien</ion-option>
+      </ion-select>
+    </ion-item> -->
+
+
+
+
+
+    <button ion-button type="submit"  >Submit</button>
+
+
+  </form>
+
+
+</ion-content>

@@ -1,0 +1,50 @@
+page-annonce {
+          .titre{
+               text-align: center;
+               font-size: 20px;
+               font-style: bold;
+               color: rgb(26, 34, 150);
+          }
+
+          ion-item{
+               border: 5px solid black;
+               border-radius: 8%;
+          }
+               .plus{
+                    
+                    position:fixed;
+                    right: 3px;
+               
+                    width: 45px;
+                    height: 45px;
+                    top: 2px;
+               }
+               h3{
+                    text-align: right;
+                    color: red;
+               }
+ 
+               agm-map {
+                    height: 280px;
+                  }
+     
+     }
+.plus{
+     
+     position:fixed;
+     right: 3px;
+    
+     width: 45px;
+     height: 45px;
+     top: 2px;
+}
+h3{
+     text-align: right;
+     color: red;
+}
+.dis{
+     font-style: italic;
+     font-weight: bold;
+}
+
+

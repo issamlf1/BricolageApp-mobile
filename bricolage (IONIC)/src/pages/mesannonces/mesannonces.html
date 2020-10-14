@@ -1,0 +1,46 @@
+<!--
+  Generated template for the MesannoncesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <ion-title>Mes annonces</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-card *ngFor="let appareil of result">
+      <ion-card-header>{{ appareil.titre_anonce }}</ion-card-header>
+      <ion-card-content>
+        <p >Nom du specialiste :{{ appareil.specialiste_username }}</p>
+       
+                <p>prix negociable :{{ appareil.prix_negociable}}</p>
+                <h1 *ngIf="appareil.specialiste_username===user" >Etat :{{ appareil.etat_demande}}</h1>
+      </ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button *ngIf="appareil.specialiste_username!==user"
+              ion-button
+              full
+              color="danger"
+              (click)="onRefuser(appareil.id,appareil.client_username,appareil.titre_anonce,'refusé')"
+              
+              >refuser</button>
+          </ion-col>
+          <ion-col>
+            <button
+              ion-button
+              full
+              (click)="onAccepter(appareil.id,appareil.client_username,appareil.titre_anonce,'accepté')"
+              color="secondary"
+              *ngIf="appareil.specialiste_username!==user"
+              >accepter</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-content>
+  
